@@ -11,13 +11,17 @@
     conforme o caso.
     */
 
-    //ENTRADA
-
-    
-    //PROCESSAMENTO
-
-    
-    //SAÍDA
-    
-
+   const periodo = prompt('Informe o turno em que você estuda, use "M" para matutino, "V" para vespertino e "N" para noturno.').toLowerCase()
+   if (periodo == "m") {
+    alert("Bom dia!")
+   }
+   else if (periodo == "v") {
+    alert("Boa tarde!")
+   }
+   else if (periodo == "n") {
+    alert("Boa noite!")
+   }
+   else {
+    alert('Valores inválidos, informe "M" para matutino, "V" para vespertino e "N" para noturno.')
+   }
 </script>
