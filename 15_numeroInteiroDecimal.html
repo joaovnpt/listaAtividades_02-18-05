@@ -5,13 +5,17 @@
     Dica: utilize uma função de arredondamento.
     */
 
-    //ENTRADA
-
-
-    //PROCESSAMENTO
-
-    
-    //SAÍDA
-
-
+    const num = prompt("Informe um número.").trim().replace(",", ".")
+    const numround = Math.round(num)
+    if (isNaN(num)) {
+        alert("Informe apenas números.")
+    }
+    else {
+        if (numround == num) {
+            alert("Seu número é intero")
+        }
+        else if (num != numround) {
+            alert("Seu número é decimal.")
+        }
+    }
 </script>

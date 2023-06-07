@@ -7,13 +7,48 @@
     - inteiro ou decimal.
     */
 
-    //ENTRADA
-
-
-    //PROCESSAMENTO
-
-    
-    //SAÍDA
-
-
+    const num1 = Number(prompt("Informe um número."));
+    const num2 = Number(prompt("Informe outro número."));
+    const operacao = prompt("Informe a operação desejada entre esses dois números (use + para adição, - para subtração, * para multiplicação e / para divisão.)");
+    let resultado1;
+    let resultado = Number(resultado1)
+    let parimpar;
+    let positivonegativo
+    let inteirodecimal
+    if (isNaN(num1) || isNaN(num2)) {
+        alert("Para os valores, informe apenas números.")
+    }
+    else {
+        if (operacao == "+") {
+            resultado = num1 + num2;
+        }
+        else if (operacao == "-") {
+            resultado = num1 - num2;
+        }
+        else if (operacao == "*") {
+            resultado = num1 * num2;
+        }
+        else if (operacao == "/") {
+            resultado = num1 / num2;
+        }
+        if (resultado % 2 == 0) {
+            parimpar == "Par";
+        }
+        else if (resultado % 2 != 0) {
+            parimpar = "Ímpar";
+        }
+        if (resultado < 0) {
+            positivonegativo = "Negativo";
+        }
+        else if (resultado >= 0) {
+            positivonegativo = "Positivo";
+        }
+        if (Number.isInteger(resultado)) {
+            inteirodecimal = "Inteiro";
+        }
+        else if (Number.isInteger(resultado) == false) {
+            inteirodecimal = "Decimal";
+        }
+    }
+    alert(`O resultado é ${resultado}, seu número seu número é ${parimpar}, ${positivonegativo} e ${inteirodecimal}.`);
 </script>

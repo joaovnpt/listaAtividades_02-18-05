@@ -10,13 +10,40 @@
     Testar com: 326, 300, 100, 320, 310,305, 301, 101, 311, 111, 25, 20, 10, 21, 11, 1, 7 e 16
     */
 
-    //ENTRADA
-
-
-    //PROCESSAMENTO
-
-    
-    //SAÍDA
-
+    const num = prompt("Informe um número inteiro positivo menor que 1000.")
+    let mensagem = "";
+    if (num >= 10 && num < 100) {
+        let dezenas = num.substr(0, 1)
+        let unidades = num.substr(1, 1)
+        mensagem = mensagem + dezenas + " Dezena";
+        if (dezenas > 1) mensagem+= "s";
+        if (unidades > 0) {
+            mensagem += " e " + unidades + " Unidade";
+            if (unidades > 1) mensagem+= "s";
+        }
+        alert(mensagem);
+    }
+    else if (num >= 100) {
+        let centenas = num.substr(0, 1);
+        let dezenas = num.substr(1, 1);
+        let unidades = num.substr(2, 1);
+        mensagem = mensagem + centenas + " Centena";
+        if (centenas > 1) mensagem += "s";
+        if (dezenas > 0) {
+            mensagem += " e " + dezenas + " Dezena";
+        }
+        if (dezenas > 1) mensagem += "s"
+        if (unidades > 0) {
+            mensagem += " e " + unidades + " Unidade"
+        }
+        if (unidades > 1) mensagem += "s"
+        alert(mensagem);
+    }
+    else if (num < 10) {
+        let centenas = 0
+        let dezenas = 0
+        let unidades = num
+        alert(`Este número possúi ${centenas} centenas, ${dezenas} dezenas e ${unidades} unidades.`)
+    }
 
 </script>

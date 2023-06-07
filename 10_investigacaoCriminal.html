@@ -10,10 +10,42 @@
     O script deve no final emitir uma classificação sobre a participação da pessoa no crime. Se a pessoa responder positivamente a 2 questões ela deve ser classificada como "Suspeita", entre 3 e 4 como "Cúmplice" e 5 como "Assassino". Caso contrário, ele será classificado como "Inocente".
     */
 
-    //ENTRADA
-
-    //PROCESSAMENTO
-
-    //SAÍDA
+    alert('Você está em um interrogatório referente a um assassinato, responda apenas com "sim" ou "não"');
+    const q1 = prompt("Você telefonou para a vítima?").toLowercase();
+    const q2 = prompt("Esteve perto do local do crime?");
+    const q3 = prompt("Mora perto da vítima?");
+    const q4 = prompt("Você devia para a vítima?");
+    const q5 = pormpt("Já trabalhou com a vítima?");
+    let respostas = 0;
+    if (q1 == "sim"){
+        respostas += 1;
+    }
+    else if (q2 == "sim"){
+        respostas += 1;
+    }
+    else if (q3 == "sim"){
+        respostas += 1;
+    }
+    else if (q4 == "sim"){
+        respostas += 1;
+    }
+    else if (q5 == "sim"){
+        respostas += 1;
+    }
+    if (respostas == 2) {
+        alert("O interrogado é suspeito");
+    }
+    else if (respostas == 3 || repostas == 4) {
+        alert("O interrogado é cúmplice");
+    }
+    else if (respostas == 5) {
+        alert("O interrogado é assassino.");
+    }
+    else if (respostas == 0) {
+        alert("O interrogado é inocente."); 
+    }
+    else {
+        alert('Informe apenas "sim" e "não"')
+    }
 
 </script>

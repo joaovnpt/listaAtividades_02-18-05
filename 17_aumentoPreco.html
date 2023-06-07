@@ -6,12 +6,24 @@
         //- até 1500(inclusive): aumento de 10 %
         //- acima de 1500: aumento de 5 %
     
-    // Entrada
-
-    
-    // Processamento
-
-    
-    // Saída
-
+    const preco = Number(prompt("Informe oa valor do produto.").trim().replace(",","."));
+    let precofinal;
+    if (isNaN(preco)) {
+        alert("Responda apenas com números.");
+    }
+    else {
+        if (preco <= 280) {
+            precofinal = preco + preco * 0.20;
+        }
+        else if (preco <= 700 && preco > 280) {
+            precofinal = preco + preco * 0.15;
+        }
+        else if (preco <= 1500 && preco > 700) {
+            precofinal = preco + preco * 0.10;
+        }
+        else if (preco > 1500) {
+            precofinal = preco + preco * 0.5;
+        }
+        alert("O preço final é de R$" + precofinal.toString().replace(".",","));
+    }
 </script>

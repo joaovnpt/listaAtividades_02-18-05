@@ -8,12 +8,28 @@
     // Entre 6.9 e 6.0             D
     // Entre 5.9 e zero            E
 
-    // Entrada
-
-    
-    // Processamento
-
-    
-    // Saída
+    const nota = Number(prompt("Informe aqui sua nota de 0 a 10:").trim().replace(",", "."));
+    let notaletra;
+    if (notaletra != isNaN) {
+        if (nota >= 0 && nota <= 10) {
+            if (nota >= 9 && nota <= 10) {
+                notaletra = "A";
+            }
+            else if (nota < 9 && nota >= 8) {
+                notaletra = "B";
+            }
+            else if (nota < 8 && nota >= 7) {
+                notaletra = "C";
+            }
+            else if (nota < 7 && nota >= 6) {
+                notaletra = "D";
+            }
+            else if (nota < 6 && nota >= 0) {
+                notaletra = "E";
+            }
+        }
+    }
+    else ("Informe apenas valores de 0 a 10.");
+    alert("Você tirou uma nota nível " + notaletra);
 
 </script>

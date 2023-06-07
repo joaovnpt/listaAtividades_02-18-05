@@ -5,13 +5,76 @@
     De acordo com as respostas, informe qual a estação do ano correspondente.
     */
 
-    //ENTRADA
+    const hem = prompt('Hemisfério (responda apenas com "sul" ou "norte"):').trim().toLowerCase();
+    const data = prompt("Data atual (responda em formato dd/mm/aaaa):").trim().toLowerCase();
+    const mes = data.substr(3, 2);
+    const dia = data.substr(0, 2);
+    const padrao = /^\d{2}\/\d{2}\/\d{4}$/; //determina o padrão dd/mm/aaaa.
+    if (isNaN(hem) && padrao.test(data)) { // testa o padrão na const "data".
+        if (hem == "norte") {
+            if (
+                (mes === "06" && dia >= 21) ||
+                mes == "07" && dia >= 01 && dia <= 31 || mes == "08" && dia >= 01 && dia <= 31 ||
+                (mes == "09" && dia <= 23)
+            ) {
+                alert("Você está no verão.")
+            }
+            else if (
+                (mes === "09" && dia >= 24) ||
+                mes === "10" && dia >= 01 && dia <= 31 || mes === "11" && dia >= 01 && dia <= 31 ||
+                (mes === "12" && dia <= 22)
+            ) {
+                alert("Você está no outono.")
+            }
+            else if (
+                (mes === "12" && dia >= 23) ||
+                mes === "01" && dia >= 01 && dia <= 31 || mes === "02" && dia >= 01 && dia <= 31 ||
+                (mes === "03" && dia <= 20)
+            ) {
+                alert("Você está no inverno.")
+            }
+            else if (
+                (mes === "03" && dia >= 21) ||
+                mes === "04" && dia >= 01 && dia <= 31 || mes === "05" && dia >= 01 && dia <= 31 ||
+                (mes === "06" && dia <= 21)
+            ) {
+                alert("Você está na primavera.")
+            }
 
-
-    //PROCESSAMENTO
-
-    
-    //SAÍDA
-
-
+        }
+        else if (hem == "sul") {
+            if (
+                (mes === "06" && dia >= 21) ||
+                mes === "07" && dia >= 01 && dia <= 31 || mes === "08" && dia >= 01 && dia <= 31 ||
+                (mes === "09" && dia <= 21)
+            ) {
+                alert("Você está no inverno.")
+            }
+            if (
+                (mes === "09" && dia >= 22) ||
+                mes === "10" && dia >= 01 && dia <= 31 || mes === "11" && dia >= 01 && dia <= 31 ||
+                (mes === "12" && dia <= 21)
+            ) {
+                alert("Você está na primavera.")
+            }
+            if (
+                (mes === "12" && dia >= 21) ||
+                mes === "01" && dia >= 01 && dia <= 31 || mes === "02" && dia >= 01 && dia <= 31 ||
+                (mes === "03" && dia <= 20)
+            ) {
+                alert("Você está no verão.")
+            }
+            if (
+                (mes === "03" && dia >= 20) ||
+                mes === "04" && dia >= 01 && dia <= 31 || mes === "05" && dia >= 01 && dia <= 31 ||
+                (mes === "06" && dia <= 21)
+            ) {
+                alert("Você está no outono.")
+            }
+        }
+    }
+    else {
+        alert("Informe a data no formato dd/mm/aaaa corretamente.")
+    }
+    //erro que estava procurando: meses estavam sem aspas.
 </script>
