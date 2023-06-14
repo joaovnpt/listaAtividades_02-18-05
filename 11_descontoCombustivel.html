@@ -13,13 +13,40 @@
     Escreva um algoritmo que leia o número de litros vendidos, o tipo de combustível (codificado da seguinte forma: A-álcool, G-gasolina), calcule e imprima o valor a ser pago pelo cliente sabendo-se que o preço do litro da gasolina é R$ 6,50 o preço do litro do álcool é R$ 6,10.
     */
 
-    //ENTRADA
+    const gastype = prompt('Informe o tipo de combustível desejado (Digite "A" para álcool ou "G" para gasolina).').toLowerCase().trim();
+    let gasword = "";
+    let gasprice = "";
+    if (gastype === "a") {
+        gasword = "álcool";
+    }
+    else if (gastype === "g") {
+        gasword = "gasolina";
+    }
+    const gasqtd = Number(prompt("Quantos litros de " + gasword + " você quer abastecer?").trim().replace(",", "."));
+    if (isNaN(gasqtd)) {
+        alert("Informe apenas números para a quantidade de combustível.")
+    }
+    if ((gastype === "a" || gastype === "g")) {
+        if (gastype === "a") {
+            if (gasqtd <= 20) {
+                gasprice = (6.10 * gasqtd) * 0.97;
+            }
+            else if (gasqtd > 20) {
+                gasprice = (6.10 * gasqtd) * 0.95;
+            }
+        }
+        else if (gastype === "g") {
+            if (gasqtd <= 20) {
+                gasprice = (6.50 * gasqtd) * 0.96;
+            }
 
-
-    //PROCESSAMENTO
-
-    
-    //SAÍDA
-
-
+            if (gasqtd > 20) {
+                gasprice = (6.50 * gasqtd) * 0.94;
+            }
+        }
+        alert(gasqtd + "L" + " de " + gasword + " ficou em R$" + gasprice.toString().replace(".", ","));
+    }
+    else {
+        alert('Informe apenas com "A" para álcool ou "G" para gasolina.');
+    }
 </script>

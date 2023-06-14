@@ -1,49 +1,73 @@
 <script>
     /*
-    //PROBLEMA
-    Faça um script que leia um número inteiro menor que 1000 e imprima a quantidade de centenas, dezenas e unidades do mesmo.
-    Observando os termos no plural a colocação do "e", da vírgula entre outros.
-    
-    Exemplo:
-    326 = 3 centenas, 2 dezenas e 6 unidades
-    12 = 1 dezena e 2 unidades
-    Testar com: 326, 300, 100, 320, 310,305, 301, 101, 311, 111, 25, 20, 10, 21, 11, 1, 7 e 16
-    */
+//PROBLEMA
+Faça um script que leia um número inteiro menor que 1000 e imprima a quantidade de centenas, dezenas e unidades do mesmo.
+Observando os termos no plural a colocação do "e", da vírgula entre outros.
+ 
+Exemplo:
+326 = 3 centenas, 2 dezenas e 6 unidades
+12 = 1 dezena e 2 unidades
+Testar com: 326, 300, 100, 320, 310,305, 301, 101, 311, 111, 25, 20, 10, 21, 11, 1, 7 e 16
+*/
 
-    const num = prompt("Informe um número inteiro positivo menor que 1000.")
-    let mensagem = "";
-    if (num >= 10 && num < 100) {
-        let dezenas = num.substr(0, 1)
-        let unidades = num.substr(1, 1)
-        mensagem = mensagem + dezenas + " Dezena";
-        if (dezenas > 1) mensagem+= "s";
-        if (unidades > 0) {
-            mensagem += " e " + unidades + " Unidade";
-            if (unidades > 1) mensagem+= "s";
+    const num = prompt("Informe um número inteiro de 1 a 999.").trim();
+    let mensagem = "Seu número possúi "
+    if (num < 10 && num > 0) {
+        let unidades = num
+        mensagem += unidades + " unidade"
+        if (unidades > 1) {
+            mensagem += "s"
         }
         alert(mensagem);
     }
-    else if (num >= 100) {
+    else if (num < 100 && num > 9) {
+        let dezenas = num.substr(0, 1);
+        let unidades = num.substr(1, 1);
+        if (dezenas > 0)
+            mensagem = mensagem + dezenas + " dezena";
+        if (dezenas > 1) {
+            mensagem += "s";
+        }
+        if (unidades > 0) {
+            mensagem += " e " + unidades + " unidade";
+        }
+        if (unidades > 1) {
+            mensagem += "s";
+        }
+        alert(mensagem);
+    }
+    else if (num > 99 && num <= 999) {
         let centenas = num.substr(0, 1);
         let dezenas = num.substr(1, 1);
         let unidades = num.substr(2, 1);
-        mensagem = mensagem + centenas + " Centena";
-        if (centenas > 1) mensagem += "s";
-        if (dezenas > 0) {
-            mensagem += " e " + dezenas + " Dezena";
+        if (centenas > 0) {
+            mensagem = mensagem + centenas + " centena";
         }
-        if (dezenas > 1) mensagem += "s"
+        if (centenas > 1) {
+            mensagem += "s";
+        }
+        if (dezenas > 0 && unidades == 0) {
+            mensagem += " e " + dezenas + " dezena";
+        }
+        if (dezenas > 0 && unidades > 0) {
+            mensagem += ", " + dezenas + " dezena";
+        }
+        if (dezenas > 1) {
+            mensagem += "s";
+        }
         if (unidades > 0) {
-            mensagem += " e " + unidades + " Unidade"
+            mensagem += " e " + unidades + " unidade";
         }
-        if (unidades > 1) mensagem += "s"
+        if (unidades > 1) {
+            mensagem += "s";
+        }
         alert(mensagem);
     }
-    else if (num < 10) {
-        let centenas = 0
-        let dezenas = 0
-        let unidades = num
-        alert(`Este número possúi ${centenas} centenas, ${dezenas} dezenas e ${unidades} unidades.`)
+    else if (num > 999) {
+        alert("Digite apenas números entre 1 e 999.")
+    }
+    else {
+        alert("Seu número não possúi centenas, dezenas nem unidades.")
     }
 
 </script>
